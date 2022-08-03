@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form id="dataform"id="dataform" method="post" action="./backend/receive.php">
+        <fieldset> <legend>Datos personales</legend><!--agrupar datos-->
+        <label for="name">Nombre</label><!--Se indica que se va acrear un formulario-->
+        <input type="text"
+        id="name"
+        name="name"
+        placeholder=" introduce tu nombre"
+        minlength="3"
+        maxlength="50"
+        title="Introduce almenos 3 caracteres max 50"
+        tabindex="0"
+        autofocus="true"
+        autocomplete="off"
+        required> <br> <br>
+        <label for="texto">Escriba su código:</label>
+        <input type="textarea" name="codigo" id="codigo"> <br>
+    <select id="typedocument" name="typedocument">
+    <option value="nada"  selected="selected"> Seleccione un tipo de documento</option>
+    <option value="CC">Cedula de Cidudania</option>
+    <option value="TI">Tarjeta de identidad</option>
+    <option value="CE">Cedula extranjera</option>
+    </select><br>
+         <!--placeholder es un fondo o leyenda que indica que informacion se introduce-->
+         <label for="document">Documento</label>
+        <input type="number" id="document" name="document"
+        placeholder="Introduce tu documento de identidad"
+        min="2" max="99" tabindex="1"> 
+        <label for="estado civil">Estado civil</label>
+        <input type="radio" name="ecivil" id="ecivil" value="Soltero">Soltero(a)
+        <input type="radio" name="ecivil" id="ecivil" value="Casado">Casado(a)
+        <input type="radio" name="ecivil" id="ecivil" value="Divorciado">Divorciado (a)
+        <input type="radio" name="ecivil" id="ecivil" value="Viudo">Viudo(a)
+    </fieldset><br>
+    <fieldset> <legend>Informacion de estudio y otros</legend>
+        <label for="colores">Color favorito:</label>
+        <input type="color" id="color">
+        <label for="date">Fecha de inscripcion</label>
+        <input type="date" id="dateinc">
+        <label for="documentfile">Cargue los documentos de requisitos</label>
+       <input type="file" name="file" id="documentfile">
+       <label for="rangoedad">¿Cómo le ha parecido nuestro servicio? </label>
+       <input type="range" name="servicio" id="servicio"> <br><br>
+       <label for="hora">¿A qué hora quiere programar su cita?</label>
+        <input type="time" name="hora" id="hora" value="hora"> <br><br>
+        <label for="semana">Seleccione semana de su cita:</label>
+        <input type="week" name="semana" id="semanacita" value="sem">
+        <lable for="numero">Número de contacto:</lable>
+        <input type="tel" nam="numero" id="numero"> <br>
+        <label for="url">Anexe link de su comprobante médico:</label>
+        <input type="url" name="urrl" id="url" ><br>
+    </fieldset><br>
+    <label for="lenguajes">Lenguajes de programacion</label>
+    <select name="lenguajes" id="lenguajes">
+        <optgroup label="lengujaes tipados">
+            <option value="Java">Java</option>
+            <option value="Csharp">C#</option>
+            <option value="c++">C++</option>
+        </optgroup>
+        <optgroup label="lenguajes no tipados">
+            <option value="phyton"> Phyton</option>
+            <option value="js">Java Scrip</option>
+        </optgroup>
+       </select>
+       <label for="acepta">¿Aceptas terminos y condiciones?</label>
+       <input type="checkbox"  id=" terminos">
+       <br>
+       <input type="submit" value="Envio de datos"><!--php-->
+       <button id="validar"> Validar</button><!--JS-->
+       <script src="./Assets/Scripts/main.js"></script> 
+    </form>
+</body>
+</html>
